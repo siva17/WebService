@@ -1,0 +1,645 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		847086BF1992CF7700CA4BC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847086BE1992CF7700CA4BC9 /* Foundation.framework */; };
+		847086C11992CF7700CA4BC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847086C01992CF7700CA4BC9 /* CoreGraphics.framework */; };
+		847086C31992CF7700CA4BC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847086C21992CF7700CA4BC9 /* UIKit.framework */; };
+		847086C91992CF7700CA4BC9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 847086C71992CF7700CA4BC9 /* InfoPlist.strings */; };
+		847086CB1992CF7700CA4BC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 847086CA1992CF7700CA4BC9 /* main.m */; };
+		847086CF1992CF7700CA4BC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 847086CE1992CF7700CA4BC9 /* AppDelegate.m */; };
+		847086D21992CF7700CA4BC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847086D01992CF7700CA4BC9 /* Main.storyboard */; };
+		847086D51992CF7700CA4BC9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847086D41992CF7700CA4BC9 /* ViewController.m */; };
+		847086D71992CF7700CA4BC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847086D61992CF7700CA4BC9 /* Images.xcassets */; };
+		847086DE1992CF7700CA4BC9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847086DD1992CF7700CA4BC9 /* XCTest.framework */; };
+		847086DF1992CF7700CA4BC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847086BE1992CF7700CA4BC9 /* Foundation.framework */; };
+		847086E01992CF7700CA4BC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847086C21992CF7700CA4BC9 /* UIKit.framework */; };
+		847086E81992CF7700CA4BC9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 847086E61992CF7700CA4BC9 /* InfoPlist.strings */; };
+		847086EA1992CF7700CA4BC9 /* WebServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 847086E91992CF7700CA4BC9 /* WebServiceTests.m */; };
+		847087221992D0A200CA4BC9 /* DownloadClientDM.m in Sources */ = {isa = PBXBuildFile; fileRef = 847086F81992D0A200CA4BC9 /* DownloadClientDM.m */; };
+		847087231992D0A200CA4BC9 /* DownloaderIDM.m in Sources */ = {isa = PBXBuildFile; fileRef = 847086FA1992D0A200CA4BC9 /* DownloaderIDM.m */; };
+		847087241992D0A200CA4BC9 /* DownloaderODM.m in Sources */ = {isa = PBXBuildFile; fileRef = 847086FC1992D0A200CA4BC9 /* DownloaderODM.m */; };
+		847087251992D0A200CA4BC9 /* DownloadClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 847086FE1992D0A200CA4BC9 /* DownloadClient.m */; };
+		847087261992D0A200CA4BC9 /* DownloadConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 847087001992D0A200CA4BC9 /* DownloadConstants.m */; };
+		847087271992D0A200CA4BC9 /* Downloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 847087021992D0A200CA4BC9 /* Downloader.m */; };
+		847087281992D0A200CA4BC9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 847087041992D0A200CA4BC9 /* Reachability.m */; };
+		847087291992D0A200CA4BC9 /* Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = 847087071992D0A200CA4BC9 /* Loading.m */; };
+		8470872A1992D0A200CA4BC9 /* LoadingExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 847087091992D0A200CA4BC9 /* LoadingExampleVC.m */; };
+		8470872B1992D0A200CA4BC9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470870B1992D0A200CA4BC9 /* MBProgressHUD.m */; };
+		8470872C1992D0A200CA4BC9 /* DMSignupReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470870F1992D0A200CA4BC9 /* DMSignupReq.m */; };
+		8470872D1992D0A200CA4BC9 /* DMSignupReqDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 847087111992D0A200CA4BC9 /* DMSignupReqDetails.m */; };
+		8470872E1992D0A200CA4BC9 /* DMSignupRes.m in Sources */ = {isa = PBXBuildFile; fileRef = 847087131992D0A200CA4BC9 /* DMSignupRes.m */; };
+		8470872F1992D0A200CA4BC9 /* WebServiceExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 847087151992D0A200CA4BC9 /* WebServiceExampleVC.m */; };
+		847087301992D0A200CA4BC9 /* DMBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 847087181992D0A200CA4BC9 /* DMBase.m */; };
+		847087311992D0A200CA4BC9 /* DMWebservice.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470871A1992D0A200CA4BC9 /* DMWebservice.m */; };
+		847087321992D0A200CA4BC9 /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470871C1992D0A200CA4BC9 /* WebService.m */; };
+		847087331992D0A200CA4BC9 /* WebServiceCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470871E1992D0A200CA4BC9 /* WebServiceCache.m */; };
+		847087341992D0A200CA4BC9 /* WebServiceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 847087201992D0A200CA4BC9 /* WebServiceClient.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		847086E11992CF7700CA4BC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 847086B31992CF7700CA4BC9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 847086BA1992CF7700CA4BC9;
+			remoteInfo = WebService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		847086BB1992CF7700CA4BC9 /* WebService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebService.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		847086BE1992CF7700CA4BC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		847086C01992CF7700CA4BC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		847086C21992CF7700CA4BC9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		847086C61992CF7700CA4BC9 /* WebService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WebService-Info.plist"; sourceTree = "<group>"; };
+		847086C81992CF7700CA4BC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		847086CA1992CF7700CA4BC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		847086CC1992CF7700CA4BC9 /* WebService-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WebService-Prefix.pch"; sourceTree = "<group>"; };
+		847086CD1992CF7700CA4BC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		847086CE1992CF7700CA4BC9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		847086D11992CF7700CA4BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		847086D31992CF7700CA4BC9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		847086D41992CF7700CA4BC9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		847086D61992CF7700CA4BC9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		847086DC1992CF7700CA4BC9 /* WebServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		847086DD1992CF7700CA4BC9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		847086E51992CF7700CA4BC9 /* WebServiceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WebServiceTests-Info.plist"; sourceTree = "<group>"; };
+		847086E71992CF7700CA4BC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		847086E91992CF7700CA4BC9 /* WebServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebServiceTests.m; sourceTree = "<group>"; };
+		847086F41992D0A200CA4BC9 /* ComponentConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentConstants.h; sourceTree = "<group>"; };
+		847086F71992D0A200CA4BC9 /* DownloadClientDM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadClientDM.h; sourceTree = "<group>"; };
+		847086F81992D0A200CA4BC9 /* DownloadClientDM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadClientDM.m; sourceTree = "<group>"; };
+		847086F91992D0A200CA4BC9 /* DownloaderIDM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloaderIDM.h; sourceTree = "<group>"; };
+		847086FA1992D0A200CA4BC9 /* DownloaderIDM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloaderIDM.m; sourceTree = "<group>"; };
+		847086FB1992D0A200CA4BC9 /* DownloaderODM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloaderODM.h; sourceTree = "<group>"; };
+		847086FC1992D0A200CA4BC9 /* DownloaderODM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloaderODM.m; sourceTree = "<group>"; };
+		847086FD1992D0A200CA4BC9 /* DownloadClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadClient.h; sourceTree = "<group>"; };
+		847086FE1992D0A200CA4BC9 /* DownloadClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadClient.m; sourceTree = "<group>"; };
+		847086FF1992D0A200CA4BC9 /* DownloadConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadConstants.h; sourceTree = "<group>"; };
+		847087001992D0A200CA4BC9 /* DownloadConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadConstants.m; sourceTree = "<group>"; };
+		847087011992D0A200CA4BC9 /* Downloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Downloader.h; sourceTree = "<group>"; };
+		847087021992D0A200CA4BC9 /* Downloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Downloader.m; sourceTree = "<group>"; };
+		847087031992D0A200CA4BC9 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		847087041992D0A200CA4BC9 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		847087061992D0A200CA4BC9 /* Loading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Loading.h; sourceTree = "<group>"; };
+		847087071992D0A200CA4BC9 /* Loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Loading.m; sourceTree = "<group>"; };
+		847087081992D0A200CA4BC9 /* LoadingExampleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingExampleVC.h; sourceTree = "<group>"; };
+		847087091992D0A200CA4BC9 /* LoadingExampleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingExampleVC.m; sourceTree = "<group>"; };
+		8470870A1992D0A200CA4BC9 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		8470870B1992D0A200CA4BC9 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		8470870E1992D0A200CA4BC9 /* DMSignupReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSignupReq.h; sourceTree = "<group>"; };
+		8470870F1992D0A200CA4BC9 /* DMSignupReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSignupReq.m; sourceTree = "<group>"; };
+		847087101992D0A200CA4BC9 /* DMSignupReqDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSignupReqDetails.h; sourceTree = "<group>"; };
+		847087111992D0A200CA4BC9 /* DMSignupReqDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSignupReqDetails.m; sourceTree = "<group>"; };
+		847087121992D0A200CA4BC9 /* DMSignupRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSignupRes.h; sourceTree = "<group>"; };
+		847087131992D0A200CA4BC9 /* DMSignupRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSignupRes.m; sourceTree = "<group>"; };
+		847087141992D0A200CA4BC9 /* WebServiceExampleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceExampleVC.h; sourceTree = "<group>"; };
+		847087151992D0A200CA4BC9 /* WebServiceExampleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceExampleVC.m; sourceTree = "<group>"; };
+		847087171992D0A200CA4BC9 /* DMBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMBase.h; sourceTree = "<group>"; };
+		847087181992D0A200CA4BC9 /* DMBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMBase.m; sourceTree = "<group>"; };
+		847087191992D0A200CA4BC9 /* DMWebservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMWebservice.h; sourceTree = "<group>"; };
+		8470871A1992D0A200CA4BC9 /* DMWebservice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMWebservice.m; sourceTree = "<group>"; };
+		8470871B1992D0A200CA4BC9 /* WebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebService.h; sourceTree = "<group>"; };
+		8470871C1992D0A200CA4BC9 /* WebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebService.m; sourceTree = "<group>"; };
+		8470871D1992D0A200CA4BC9 /* WebServiceCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceCache.h; sourceTree = "<group>"; };
+		8470871E1992D0A200CA4BC9 /* WebServiceCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceCache.m; sourceTree = "<group>"; };
+		8470871F1992D0A200CA4BC9 /* WebServiceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceClient.h; sourceTree = "<group>"; };
+		847087201992D0A200CA4BC9 /* WebServiceClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceClient.m; sourceTree = "<group>"; };
+		847087211992D0A200CA4BC9 /* WebServiceConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceConstants.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		847086B81992CF7700CA4BC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847086C11992CF7700CA4BC9 /* CoreGraphics.framework in Frameworks */,
+				847086C31992CF7700CA4BC9 /* UIKit.framework in Frameworks */,
+				847086BF1992CF7700CA4BC9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847086D91992CF7700CA4BC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847086DE1992CF7700CA4BC9 /* XCTest.framework in Frameworks */,
+				847086E01992CF7700CA4BC9 /* UIKit.framework in Frameworks */,
+				847086DF1992CF7700CA4BC9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		847086B21992CF7700CA4BC9 = {
+			isa = PBXGroup;
+			children = (
+				847086C41992CF7700CA4BC9 /* WebService */,
+				847086E31992CF7700CA4BC9 /* WebServiceTests */,
+				847086BD1992CF7700CA4BC9 /* Frameworks */,
+				847086BC1992CF7700CA4BC9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		847086BC1992CF7700CA4BC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				847086BB1992CF7700CA4BC9 /* WebService.app */,
+				847086DC1992CF7700CA4BC9 /* WebServiceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		847086BD1992CF7700CA4BC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				847086BE1992CF7700CA4BC9 /* Foundation.framework */,
+				847086C01992CF7700CA4BC9 /* CoreGraphics.framework */,
+				847086C21992CF7700CA4BC9 /* UIKit.framework */,
+				847086DD1992CF7700CA4BC9 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		847086C41992CF7700CA4BC9 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				847086F31992D0A200CA4BC9 /* Components */,
+				847086CD1992CF7700CA4BC9 /* AppDelegate.h */,
+				847086CE1992CF7700CA4BC9 /* AppDelegate.m */,
+				847086D01992CF7700CA4BC9 /* Main.storyboard */,
+				847086D31992CF7700CA4BC9 /* ViewController.h */,
+				847086D41992CF7700CA4BC9 /* ViewController.m */,
+				847086D61992CF7700CA4BC9 /* Images.xcassets */,
+				847086C51992CF7700CA4BC9 /* Supporting Files */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		847086C51992CF7700CA4BC9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				847086C61992CF7700CA4BC9 /* WebService-Info.plist */,
+				847086C71992CF7700CA4BC9 /* InfoPlist.strings */,
+				847086CA1992CF7700CA4BC9 /* main.m */,
+				847086CC1992CF7700CA4BC9 /* WebService-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		847086E31992CF7700CA4BC9 /* WebServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				847086E91992CF7700CA4BC9 /* WebServiceTests.m */,
+				847086E41992CF7700CA4BC9 /* Supporting Files */,
+			);
+			path = WebServiceTests;
+			sourceTree = "<group>";
+		};
+		847086E41992CF7700CA4BC9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				847086E51992CF7700CA4BC9 /* WebServiceTests-Info.plist */,
+				847086E61992CF7700CA4BC9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		847086F31992D0A200CA4BC9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				847086F41992D0A200CA4BC9 /* ComponentConstants.h */,
+				847086F51992D0A200CA4BC9 /* Downloader */,
+				847087051992D0A200CA4BC9 /* LoadingIndicator */,
+				8470870C1992D0A200CA4BC9 /* WebService */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		847086F51992D0A200CA4BC9 /* Downloader */ = {
+			isa = PBXGroup;
+			children = (
+				847086F61992D0A200CA4BC9 /* DataModel */,
+				847086FD1992D0A200CA4BC9 /* DownloadClient.h */,
+				847086FE1992D0A200CA4BC9 /* DownloadClient.m */,
+				847086FF1992D0A200CA4BC9 /* DownloadConstants.h */,
+				847087001992D0A200CA4BC9 /* DownloadConstants.m */,
+				847087011992D0A200CA4BC9 /* Downloader.h */,
+				847087021992D0A200CA4BC9 /* Downloader.m */,
+				847087031992D0A200CA4BC9 /* Reachability.h */,
+				847087041992D0A200CA4BC9 /* Reachability.m */,
+			);
+			path = Downloader;
+			sourceTree = "<group>";
+		};
+		847086F61992D0A200CA4BC9 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				847086F71992D0A200CA4BC9 /* DownloadClientDM.h */,
+				847086F81992D0A200CA4BC9 /* DownloadClientDM.m */,
+				847086F91992D0A200CA4BC9 /* DownloaderIDM.h */,
+				847086FA1992D0A200CA4BC9 /* DownloaderIDM.m */,
+				847086FB1992D0A200CA4BC9 /* DownloaderODM.h */,
+				847086FC1992D0A200CA4BC9 /* DownloaderODM.m */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		847087051992D0A200CA4BC9 /* LoadingIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				847087061992D0A200CA4BC9 /* Loading.h */,
+				847087071992D0A200CA4BC9 /* Loading.m */,
+				847087081992D0A200CA4BC9 /* LoadingExampleVC.h */,
+				847087091992D0A200CA4BC9 /* LoadingExampleVC.m */,
+				8470870A1992D0A200CA4BC9 /* MBProgressHUD.h */,
+				8470870B1992D0A200CA4BC9 /* MBProgressHUD.m */,
+			);
+			path = LoadingIndicator;
+			sourceTree = "<group>";
+		};
+		8470870C1992D0A200CA4BC9 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				8470870D1992D0A200CA4BC9 /* Example */,
+				847087161992D0A200CA4BC9 /* WebService */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		8470870D1992D0A200CA4BC9 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				8470870E1992D0A200CA4BC9 /* DMSignupReq.h */,
+				8470870F1992D0A200CA4BC9 /* DMSignupReq.m */,
+				847087101992D0A200CA4BC9 /* DMSignupReqDetails.h */,
+				847087111992D0A200CA4BC9 /* DMSignupReqDetails.m */,
+				847087121992D0A200CA4BC9 /* DMSignupRes.h */,
+				847087131992D0A200CA4BC9 /* DMSignupRes.m */,
+				847087141992D0A200CA4BC9 /* WebServiceExampleVC.h */,
+				847087151992D0A200CA4BC9 /* WebServiceExampleVC.m */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		847087161992D0A200CA4BC9 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				847087171992D0A200CA4BC9 /* DMBase.h */,
+				847087181992D0A200CA4BC9 /* DMBase.m */,
+				847087191992D0A200CA4BC9 /* DMWebservice.h */,
+				8470871A1992D0A200CA4BC9 /* DMWebservice.m */,
+				8470871B1992D0A200CA4BC9 /* WebService.h */,
+				8470871C1992D0A200CA4BC9 /* WebService.m */,
+				8470871D1992D0A200CA4BC9 /* WebServiceCache.h */,
+				8470871E1992D0A200CA4BC9 /* WebServiceCache.m */,
+				8470871F1992D0A200CA4BC9 /* WebServiceClient.h */,
+				847087201992D0A200CA4BC9 /* WebServiceClient.m */,
+				847087211992D0A200CA4BC9 /* WebServiceConstants.h */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		847086BA1992CF7700CA4BC9 /* WebService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 847086ED1992CF7700CA4BC9 /* Build configuration list for PBXNativeTarget "WebService" */;
+			buildPhases = (
+				847086B71992CF7700CA4BC9 /* Sources */,
+				847086B81992CF7700CA4BC9 /* Frameworks */,
+				847086B91992CF7700CA4BC9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WebService;
+			productName = WebService;
+			productReference = 847086BB1992CF7700CA4BC9 /* WebService.app */;
+			productType = "com.apple.product-type.application";
+		};
+		847086DB1992CF7700CA4BC9 /* WebServiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 847086F01992CF7700CA4BC9 /* Build configuration list for PBXNativeTarget "WebServiceTests" */;
+			buildPhases = (
+				847086D81992CF7700CA4BC9 /* Sources */,
+				847086D91992CF7700CA4BC9 /* Frameworks */,
+				847086DA1992CF7700CA4BC9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				847086E21992CF7700CA4BC9 /* PBXTargetDependency */,
+			);
+			name = WebServiceTests;
+			productName = WebServiceTests;
+			productReference = 847086DC1992CF7700CA4BC9 /* WebServiceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		847086B31992CF7700CA4BC9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = www.siva4u.com;
+				TargetAttributes = {
+					847086DB1992CF7700CA4BC9 = {
+						TestTargetID = 847086BA1992CF7700CA4BC9;
+					};
+				};
+			};
+			buildConfigurationList = 847086B61992CF7700CA4BC9 /* Build configuration list for PBXProject "WebService" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 847086B21992CF7700CA4BC9;
+			productRefGroup = 847086BC1992CF7700CA4BC9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				847086BA1992CF7700CA4BC9 /* WebService */,
+				847086DB1992CF7700CA4BC9 /* WebServiceTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		847086B91992CF7700CA4BC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847086D71992CF7700CA4BC9 /* Images.xcassets in Resources */,
+				847086C91992CF7700CA4BC9 /* InfoPlist.strings in Resources */,
+				847086D21992CF7700CA4BC9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847086DA1992CF7700CA4BC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847086E81992CF7700CA4BC9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		847086B71992CF7700CA4BC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847087331992D0A200CA4BC9 /* WebServiceCache.m in Sources */,
+				847086D51992CF7700CA4BC9 /* ViewController.m in Sources */,
+				8470872D1992D0A200CA4BC9 /* DMSignupReqDetails.m in Sources */,
+				847087321992D0A200CA4BC9 /* WebService.m in Sources */,
+				847087251992D0A200CA4BC9 /* DownloadClient.m in Sources */,
+				847087271992D0A200CA4BC9 /* Downloader.m in Sources */,
+				847087221992D0A200CA4BC9 /* DownloadClientDM.m in Sources */,
+				847087341992D0A200CA4BC9 /* WebServiceClient.m in Sources */,
+				8470872A1992D0A200CA4BC9 /* LoadingExampleVC.m in Sources */,
+				847087281992D0A200CA4BC9 /* Reachability.m in Sources */,
+				847087261992D0A200CA4BC9 /* DownloadConstants.m in Sources */,
+				8470872C1992D0A200CA4BC9 /* DMSignupReq.m in Sources */,
+				8470872F1992D0A200CA4BC9 /* WebServiceExampleVC.m in Sources */,
+				8470872E1992D0A200CA4BC9 /* DMSignupRes.m in Sources */,
+				847087311992D0A200CA4BC9 /* DMWebservice.m in Sources */,
+				847086CF1992CF7700CA4BC9 /* AppDelegate.m in Sources */,
+				847086CB1992CF7700CA4BC9 /* main.m in Sources */,
+				847087301992D0A200CA4BC9 /* DMBase.m in Sources */,
+				8470872B1992D0A200CA4BC9 /* MBProgressHUD.m in Sources */,
+				847087231992D0A200CA4BC9 /* DownloaderIDM.m in Sources */,
+				847087291992D0A200CA4BC9 /* Loading.m in Sources */,
+				847087241992D0A200CA4BC9 /* DownloaderODM.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847086D81992CF7700CA4BC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847086EA1992CF7700CA4BC9 /* WebServiceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		847086E21992CF7700CA4BC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 847086BA1992CF7700CA4BC9 /* WebService */;
+			targetProxy = 847086E11992CF7700CA4BC9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		847086C71992CF7700CA4BC9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				847086C81992CF7700CA4BC9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		847086D01992CF7700CA4BC9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				847086D11992CF7700CA4BC9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		847086E61992CF7700CA4BC9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				847086E71992CF7700CA4BC9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		847086EB1992CF7700CA4BC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		847086EC1992CF7700CA4BC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		847086EE1992CF7700CA4BC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WebService/WebService-Prefix.pch";
+				INFOPLIST_FILE = "WebService/WebService-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		847086EF1992CF7700CA4BC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WebService/WebService-Prefix.pch";
+				INFOPLIST_FILE = "WebService/WebService-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		847086F11992CF7700CA4BC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WebService.app/WebService";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WebService/WebService-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "WebServiceTests/WebServiceTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		847086F21992CF7700CA4BC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WebService.app/WebService";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WebService/WebService-Prefix.pch";
+				INFOPLIST_FILE = "WebServiceTests/WebServiceTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		847086B61992CF7700CA4BC9 /* Build configuration list for PBXProject "WebService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847086EB1992CF7700CA4BC9 /* Debug */,
+				847086EC1992CF7700CA4BC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		847086ED1992CF7700CA4BC9 /* Build configuration list for PBXNativeTarget "WebService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847086EE1992CF7700CA4BC9 /* Debug */,
+				847086EF1992CF7700CA4BC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		847086F01992CF7700CA4BC9 /* Build configuration list for PBXNativeTarget "WebServiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847086F11992CF7700CA4BC9 /* Debug */,
+				847086F21992CF7700CA4BC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 847086B31992CF7700CA4BC9 /* Project object */;
+}
