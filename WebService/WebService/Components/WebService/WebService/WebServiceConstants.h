@@ -28,9 +28,9 @@
 
 #import <Foundation/Foundation.h>
 
-#define DM_DEFINE_ARRAY_TYPE		@"dmDefineArrayType"
-#define DM_DEFINE_MAPPING			@"dmDefineMapping"
-#define DM_DEFINE_DM_NAME			@"dmDefineDMName"
+#define DM_DEFINE_PROP_MAP      @"wsKeyValueMapping"
+#define DM_DEFINE_PROP_TYPE		@"type"
+#define DM_DEFINE_PROP_NAME		@"name"
 
 #ifndef HTTP_REQUEST_METHOD_GET
 #define HTTP_REQUEST_METHOD_GET		@"GET"

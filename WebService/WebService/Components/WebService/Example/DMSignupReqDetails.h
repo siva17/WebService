@@ -26,9 +26,7 @@
 // SOFTWARE.
 //
 
-#import "DMBase.h"
-
-@interface DMSignupReqDetails : DMBase
-@property(nonatomic,retain) NSString *address;
-@property(nonatomic,retain) NSString *mobile;
+@interface DMSignupReqDetails : NSObject
+@property(nonatomic,retain) NSString *Address;
+@property(nonatomic,retain) NSString *MobileNumber;
 @end

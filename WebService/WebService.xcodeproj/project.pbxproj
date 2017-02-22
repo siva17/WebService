@@ -35,7 +35,6 @@
 		8470872D1992D0A200CA4BC9 /* DMSignupReqDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 847087111992D0A200CA4BC9 /* DMSignupReqDetails.m */; };
 		8470872E1992D0A200CA4BC9 /* DMSignupRes.m in Sources */ = {isa = PBXBuildFile; fileRef = 847087131992D0A200CA4BC9 /* DMSignupRes.m */; };
 		8470872F1992D0A200CA4BC9 /* WebServiceExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 847087151992D0A200CA4BC9 /* WebServiceExampleVC.m */; };
-		847087301992D0A200CA4BC9 /* DMBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 847087181992D0A200CA4BC9 /* DMBase.m */; };
 		847087311992D0A200CA4BC9 /* DMWebservice.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470871A1992D0A200CA4BC9 /* DMWebservice.m */; };
 		847087321992D0A200CA4BC9 /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470871C1992D0A200CA4BC9 /* WebService.m */; };
 		847087331992D0A200CA4BC9 /* WebServiceCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470871E1992D0A200CA4BC9 /* WebServiceCache.m */; };
@@ -101,8 +100,6 @@
 		847087131992D0A200CA4BC9 /* DMSignupRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSignupRes.m; sourceTree = "<group>"; };
 		847087141992D0A200CA4BC9 /* WebServiceExampleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceExampleVC.h; sourceTree = "<group>"; };
 		847087151992D0A200CA4BC9 /* WebServiceExampleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceExampleVC.m; sourceTree = "<group>"; };
-		847087171992D0A200CA4BC9 /* DMBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMBase.h; sourceTree = "<group>"; };
-		847087181992D0A200CA4BC9 /* DMBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMBase.m; sourceTree = "<group>"; };
 		847087191992D0A200CA4BC9 /* DMWebservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMWebservice.h; sourceTree = "<group>"; };
 		8470871A1992D0A200CA4BC9 /* DMWebservice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMWebservice.m; sourceTree = "<group>"; };
 		8470871B1992D0A200CA4BC9 /* WebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebService.h; sourceTree = "<group>"; };
@@ -292,8 +289,6 @@
 		847087161992D0A200CA4BC9 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
-				847087171992D0A200CA4BC9 /* DMBase.h */,
-				847087181992D0A200CA4BC9 /* DMBase.m */,
 				847087191992D0A200CA4BC9 /* DMWebservice.h */,
 				8470871A1992D0A200CA4BC9 /* DMWebservice.m */,
 				8470871B1992D0A200CA4BC9 /* WebService.h */,
@@ -421,7 +416,6 @@
 				847087311992D0A200CA4BC9 /* DMWebservice.m in Sources */,
 				847086CF1992CF7700CA4BC9 /* AppDelegate.m in Sources */,
 				847086CB1992CF7700CA4BC9 /* main.m in Sources */,
-				847087301992D0A200CA4BC9 /* DMBase.m in Sources */,
 				8470872B1992D0A200CA4BC9 /* MBProgressHUD.m in Sources */,
 				847087231992D0A200CA4BC9 /* DownloaderIDM.m in Sources */,
 				847087291992D0A200CA4BC9 /* Loading.m in Sources */,
@@ -630,6 +624,7 @@
 				847086EF1992CF7700CA4BC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		847086F01992CF7700CA4BC9 /* Build configuration list for PBXNativeTarget "WebServiceTests" */ = {
 			isa = XCConfigurationList;
@@ -638,6 +633,7 @@
 				847086F21992CF7700CA4BC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

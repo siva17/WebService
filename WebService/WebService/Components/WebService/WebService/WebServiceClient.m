@@ -28,7 +28,6 @@
 
 #import <objc/runtime.h>
 #import "WebServiceClient.h"
-#import "DMBase.h"
 
 @interface WebServiceClient ()
 @property(nonatomic,assign) id delegate;
@@ -103,110 +102,148 @@
         return postArray;
     } else {
         NSMutableDictionary *postData = [[NSMutableDictionary alloc]init];
-        if([class_getSuperclass([dataModel class]) isSubclassOfClass:[DMBase class]]) {
-            
-            unsigned int varCount;
-            unsigned int subVarCount;
-            Ivar *vars = class_copyIvarList([dataModel class], &varCount);
-            
-            DMBase *dmBase = dataModel;
-            NSArray *dmDefines = dmBase.dmDefines;
-            
-            int count = [dmDefines count];
-            for (int i=0; i<count; i++) {
-                NSDictionary *definesDict = [dmDefines objectAtIndex:i];
-                NSString *name = [definesDict objectForKey:DM_DEFINE_DM_NAME];
-                if(name) {
-                    Ivar var = [self getIvarWithName:[name cStringUsingEncoding:NSUTF8StringEncoding] fromIvars:vars varCount:varCount];
-                    if(var) {
-                        char *className = [self getClassNameFromVar:var];
-                        id object = object_getIvar(dataModel,var);
-                        if(object) {
-                            NSString *classNameNSStr = [NSString stringWithUTF8String:className];
-                            if([classNameNSStr rangeOfString:@"Array"].location != NSNotFound) {
-                                NSMutableArray *postArray = [[NSMutableArray alloc]init];
-                                if(postArray) {
-                                    NSArray *arrayObject = (NSArray *)object;
-                                    for (id singleItem in arrayObject) {
-                                        [postArray addObject:[self encodeFromDataModel:singleItem]];
-                                    }
-                                    [postData setObject:postArray forKey:[definesDict objectForKey:DM_DEFINE_MAPPING]];
-                                }
-                            } else {
-                                Ivar *subVars = class_copyIvarList([objc_getClass(className) class], &subVarCount);
-                                if(subVarCount > 0) {
-                                    [postData setObject:[self encodeFromDataModel:object] forKey:[definesDict objectForKey:DM_DEFINE_MAPPING]];
-                                } else {
-                                    [postData setObject:object forKey:[definesDict objectForKey:DM_DEFINE_MAPPING]];
-                                }
-                                free(subVars);
+        unsigned int varCount;
+        unsigned int subVarCount;
+        Ivar *vars = class_copyIvarList([dataModel class], &varCount);
+        NSArray *dmDefines = [self allPropertyNames:dataModel];
+        NSDictionary *mapping = [self getMappingFromDataModel:dataModel];
+        for (NSString *propName in dmDefines) {
+            if(propName) {
+                NSString *arrayType=nil;
+                NSString *jsonKey = propName;
+                if(mapping) {
+                    id mapKey = [mapping objectForKey:propName];
+                    if(mapKey) {
+                        if([mapKey isKindOfClass:[NSDictionary class]]) {
+                            arrayType = [mapKey objectForKey:DM_DEFINE_PROP_TYPE];
+                            mapKey = [mapKey objectForKey:DM_DEFINE_PROP_NAME];
+                            if(mapKey) {
+                                jsonKey = [NSString stringWithString:mapKey];
                             }
+                        } else {
+                            jsonKey = [NSString stringWithString:mapKey];
                         }
-                        free(className);
                     }
                 }
+                Ivar var = [self getIvarWithName:[propName cStringUsingEncoding:NSUTF8StringEncoding] fromIvars:vars varCount:varCount];
+                if(var) {
+                    char *className = [self getClassNameFromVar:var];
+                    id object = object_getIvar(dataModel,var);
+                    if(object) {
+                        NSString *classNameNSStr = [NSString stringWithUTF8String:className];
+                        if([classNameNSStr rangeOfString:@"Array"].location != NSNotFound) {
+                            NSMutableArray *postArray = [[NSMutableArray alloc]init];
+                            if(postArray) {
+                                NSArray *arrayObject = (NSArray *)object;
+                                for (id singleItem in arrayObject) {
+                                    [postArray addObject:[self encodeFromDataModel:singleItem]];
+                                }
+                                [postData setObject:postArray forKey:jsonKey];
+                            }
+                        } else {
+                            Ivar *subVars = class_copyIvarList([objc_getClass(className) class], &subVarCount);
+                            if(subVarCount > 0) {
+                                [postData setObject:[self encodeFromDataModel:object] forKey:jsonKey];
+                            } else {
+                                [postData setObject:object forKey:jsonKey];
+                            }
+                            free(subVars);
+                        }
+                    }
+                    free(className);
+                }
             }
-            free(vars);
         }
+        free(vars);
         return postData;
     }
     return nil;
 }
 
--(void)decodeToDataModel:(id)dataModel jsonData:(id)jsonData {
-    if([class_getSuperclass([dataModel class]) isSubclassOfClass:[DMBase class]]) {
-        unsigned int varCount;
-        Ivar *vars = class_copyIvarList([dataModel class], &varCount);
-        
-        DMBase *dmBase = dataModel;
-        NSArray *dmDefines = dmBase.dmDefines;
-        
-        NSDictionary *inData = (NSDictionary *)jsonData;
-        
-        int count = [dmDefines count];
-        for (int i=0; i<count; i++) {
-            NSDictionary *definesDict = [dmDefines objectAtIndex:i];
-            NSString *key = [definesDict objectForKey:DM_DEFINE_MAPPING];
-            if(key) {
-                id responseData = [inData objectForKey:key];
-                if(responseData) {
-                    NSString *name = [definesDict objectForKey:DM_DEFINE_DM_NAME];
-                    if(name) {
-                        Ivar var = [self getIvarWithName:[name cStringUsingEncoding:NSUTF8StringEncoding] fromIvars:vars varCount:varCount];
-                        if(var) {
-                            id returnObject;
-                            if([responseData isKindOfClass:[NSDictionary class]]) {
-                                char *className = [self getClassNameFromVar:var];
-                                if(className) {
-                                    NSString *classNameNSString = [NSString stringWithUTF8String:className];
-                                    free(className);
-                                    id returnObject = [[NSClassFromString(classNameNSString) alloc]init];
-                                    [self decodeToDataModel:returnObject jsonData:responseData];
-                                    responseData = returnObject;
-                                }
-                            } else if([responseData isKindOfClass:[NSArray class]]) {
-                                NSString *classNameNSString = [definesDict objectForKey:DM_DEFINE_ARRAY_TYPE];
-                                if(classNameNSString) {
-                                    NSMutableArray *returnArray = [[NSMutableArray alloc]init];
-                                    NSArray *jsonArray = (NSArray *)responseData;
-                                    for(id localJsonData in jsonArray) {
-                                        id returnObject = [[NSClassFromString(classNameNSString) alloc]init];
-                                        [self decodeToDataModel:returnObject jsonData:localJsonData];
-                                        [returnArray addObject:returnObject];
-                                    }
-                                    responseData = returnArray;
-                                }
-                            } else {
-                                returnObject = responseData;
-                            }
-                            object_setIvar(dataModel, var, responseData);
+-(NSArray *)allPropertyNames:(id)owner {
+    unsigned count;
+    objc_property_t *properties = class_copyPropertyList([owner class], &count);
+    NSMutableArray *rv = [NSMutableArray array];
+    unsigned i;
+    for (i = 0; i < count; i++) {
+        objc_property_t property = properties[i];
+        NSString *name = [NSString stringWithUTF8String:property_getName(property)];
+        [rv addObject:name];
+    }
+    free(properties);
+    return rv;
+}
+
+-(NSDictionary *)getMappingFromDataModel:(id)dataModel {
+    Class dataModelCls = [dataModel class];
+    SEL sel = NSSelectorFromString(DM_DEFINE_PROP_MAP);
+    NSDictionary *mapping = nil;
+    if([dataModelCls respondsToSelector:sel]) {
+        mapping = [dataModelCls performSelector:sel];
+    }
+    return mapping;
+}
+
+-(void)decodeToDataModel:(id)dataModel jsonData:(NSDictionary *)jsonData {
+    unsigned int varCount;
+    Ivar *vars = class_copyIvarList([dataModel class], &varCount);
+    NSArray *dmDefines = [self allPropertyNames:dataModel];
+    NSDictionary *mapping = [self getMappingFromDataModel:dataModel];
+    for (NSString *propName in dmDefines) {
+        if(propName) {
+            NSString *arrayType=nil;
+            NSString *jsonKey = propName;
+            if(mapping) {
+                id mapKey = [mapping objectForKey:propName];
+                if(mapKey) {
+                    if([mapKey isKindOfClass:[NSDictionary class]]) {
+                        arrayType = [mapKey objectForKey:DM_DEFINE_PROP_TYPE];
+                        mapKey = [mapKey objectForKey:DM_DEFINE_PROP_NAME];
+                        if(mapKey) {
+                            jsonKey = [NSString stringWithString:mapKey];
                         }
+                    } else {
+                        jsonKey = [NSString stringWithString:mapKey];
                     }
                 }
             }
+            id responseData = [jsonData objectForKey:jsonKey];
+            if(responseData) {
+                Ivar var = [self getIvarWithName:[propName cStringUsingEncoding:NSUTF8StringEncoding] fromIvars:vars varCount:varCount];
+                if(var) {
+                    id propValue = nil;
+                    if([responseData isKindOfClass:[NSDictionary class]]) {
+                        char *className = [self getClassNameFromVar:var];
+                        if(className) {
+                            NSString *classNameNSString = [NSString stringWithUTF8String:className];
+                            free(className);
+                            propValue = [[NSClassFromString(classNameNSString) alloc]init];
+                            [self decodeToDataModel:propValue jsonData:responseData];
+                        }
+                    } else if([responseData isKindOfClass:[NSArray class]]) {
+                        if(arrayType) {
+                            NSMutableArray *returnArray = [[NSMutableArray alloc]init];
+                            NSArray *jsonArray = (NSArray *)responseData;
+                            for(id localJsonData in jsonArray) {
+                                id returnObject = [[NSClassFromString(arrayType) alloc]init];
+                                [self decodeToDataModel:returnObject jsonData:localJsonData];
+                                [returnArray addObject:returnObject];
+                            }
+                            propValue = returnArray;
+                        }
+                    } else {
+                        // Basic Value and is assigned directly
+                        propValue = responseData;
+                    }
+                    if(propValue) {
+                        object_setIvar(dataModel, var, propValue);
+                    }
+                }
+            }
+
         }
-        free(vars);
     }
+    free(vars);
 }
 
 -(void)validateAndUpdateHttpMethod {
@@ -269,6 +306,7 @@
             if(error) AppLog(APP_LOG_ERR,@"Error:%@\n",[error localizedDescription]);
             if(jsonData) {
                 [self decodeToDataModel:wscDataModel.responseDM jsonData:jsonData];
+                AppLog(APP_LOG_INFO,@"DataModel:%@\n",wscDataModel.responseDM);
             }
         }
         [self callDelegateWithStatus:WS_STATUS_SUCCESS response:wscDataModel];

@@ -29,41 +29,20 @@
 #import "DMSignupRes.h"
 
 @implementation DMSignupRes
-@synthesize userID;
-@synthesize userName;
+
+@synthesize userid;
+@synthesize username;
 @synthesize status;
-@synthesize signupDetails;
-@synthesize signupArray;
+@synthesize details;
+@synthesize detailsArray;
 
-@synthesize dmDefines = _dmDefines;
-
--(NSArray *)dmDefines {
-    if (!_dmDefines) {
-        _dmDefines = @[
-                       @{
-                           DM_DEFINE_MAPPING	: @"userid",
-                           DM_DEFINE_DM_NAME	: @"userID"
-                           },
-                       @{
-                           DM_DEFINE_MAPPING	: @"username",
-                           DM_DEFINE_DM_NAME	: @"userName"
-                           },
-                       @{
-                           DM_DEFINE_MAPPING	: @"status",
-                           DM_DEFINE_DM_NAME	: @"status"
-                           },
-                       @{
-                           DM_DEFINE_MAPPING	: @"details",
-                           DM_DEFINE_DM_NAME	: @"signupDetails"
-                           },
-                       @{
-                           DM_DEFINE_ARRAY_TYPE	: @"DMSignupReqDetails",
-                           DM_DEFINE_MAPPING	: @"detailsArray",
-                           DM_DEFINE_DM_NAME	: @"signupArray"
-                           }
-                       ];
-    }
-    return _dmDefines;
++(NSDictionary *) wsKeyValueMapping {
+    return @{
+        @"userID" : @"userid",
+        @"detailsArray" : @{
+            DM_DEFINE_PROP_TYPE : @"DMSignupReqDetails"
+        }
+    };
 }
 
 @end

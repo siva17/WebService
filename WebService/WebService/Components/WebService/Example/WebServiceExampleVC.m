@@ -58,6 +58,7 @@
     DMWebservice *wsDM	= [[DMWebservice alloc]init];
     
     wsDM.url = WS_URL_SIGNUP;
+    wsDM.httpMethod = HTTP_REQUEST_METHOD_POST;
     
     DMSignupReq *reqDM = [[DMSignupReq alloc]init];
     
@@ -66,19 +67,19 @@
     reqDM.firstName = @"Test First Name"; // NULL Last Name for testing
     
     DMSignupReqDetails *signUpDetails = [[DMSignupReqDetails alloc]init];
-    signUpDetails.address = @"This is the address of signupDetails";
-    signUpDetails.mobile = @"1234567890";
+    signUpDetails.Address = @"This is the address of signupDetails";
+    signUpDetails.MobileNumber = @"1234567890";
     reqDM.signupDetails = signUpDetails;
     
     DMSignupReqDetails *s1 = [[DMSignupReqDetails alloc]init];
-    s1.address = @"This is the address of signupDetails 1";
-    s1.mobile = @"1234567890 1";
+    s1.Address = @"This is the address of signupDetails 1";
+    s1.MobileNumber = @"1234567890 1";
     DMSignupReqDetails *s2 = [[DMSignupReqDetails alloc]init];
-    s2.address = @"This is the address of signupDetails 2";
-    s2.mobile = @"1234567890 2";
+    s2.Address = @"This is the address of signupDetails 2";
+    s2.MobileNumber = @"1234567890 2";
     DMSignupReqDetails *s3 = [[DMSignupReqDetails alloc]init];
-    s3.address = @"This is the address of signupDetails 3";
-    s3.mobile = @"1234567890 3";
+    s3.Address = @"This is the address of signupDetails 3";
+    s3.MobileNumber = @"1234567890 3";
 
     reqDM.signupArray = @[s1,s2,s3];
     

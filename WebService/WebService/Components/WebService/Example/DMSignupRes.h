@@ -26,13 +26,12 @@
 // SOFTWARE.
 //
 
-#import "DMBase.h"
 #import "DMSignupReqDetails.h"
 
-@interface DMSignupRes : DMBase
-@property(nonatomic,retain) NSString *userID;
-@property(nonatomic,retain) NSString *userName;
+@interface DMSignupRes : NSObject
+@property(nonatomic,retain) NSString *userid;
+@property(nonatomic,retain) NSString *username;
 @property(nonatomic,assign) BOOL status;
-@property(nonatomic,retain) DMSignupReqDetails *signupDetails;
-@property(nonatomic,retain) NSArray *signupArray;
+@property(nonatomic,retain) DMSignupReqDetails *details;
+@property(nonatomic,retain) NSArray *detailsArray;
 @end
